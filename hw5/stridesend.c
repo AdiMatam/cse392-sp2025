@@ -64,7 +64,7 @@ int main(int argc,char **argv) {
       if (sendto==sender)
 	continue;
 
-      MPI_Send(data,1,scattertype,sendto,0,comm);
+      MPI_Send(&data[sendto],1,scattertype,sendto,0,comm);
 
       /*
        * - or do you define the datatype here?
